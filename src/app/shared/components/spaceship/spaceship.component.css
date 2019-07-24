@@ -1,0 +1,70 @@
+#space {
+    visibility: hidden;
+    position: relative;
+    animation: space-falcon;
+    animation-duration:3s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+#space-2 { 
+    position: relative;
+    animation: space-falcon-2;
+    animation-duration:6s;
+    animation-delay: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+#space-3 {
+    position: relative;
+    animation: space-falcon-3;
+    animation-duration:6s;
+    animation-delay: 9s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes space-falcon {
+    to { left: 0; visibility: visible; }
+    from { left: -100vw }
+}
+
+@keyframes space-falcon-2 {
+    0%{ left:0; top:0; visibility: visible;}
+    5%{ left:0; top:1%; }
+    10%{ left:0; top:-1vh; }
+    15%{ left:0; top:1vh; }
+    20%{ left:0; top:-1vh; }
+    25%{ left:0; top:0vh; }
+    30%{ left:0; top:1vh; }
+    35%{ left:0; top:-1vh; }
+    40%{ left:0; top:1vh;}
+    45%{ left:0; top:-1vh; }
+    50%{ left:0; top:0; }
+    55%{ left:0; top:1vh; }
+    60%{ left:0; top:-1vh; }
+    65%{ left:0; top:1vh; }
+    70%{ left:0; top:-1vh; }
+    75%{ left:0; top:0vh; }
+    80%{ left:0; top:1vh; }
+    85%{ left:0; top:-1vh; }
+    90%{ left:0; top:1vh; }
+    95%{ left:0; top:-1vh; }
+    100%{ left:0; top:0; }
+}
+
+@keyframes space-falcon-3 {
+    1%{ transform: rotate(-10deg); left:0; top:0; visibility:visible;}
+    75%{ transform: rotate(-10deg); left:110vw; top:-37vh; }
+    76%{ transform: rotate(-180deg); left:110vw; top:-37vh; }
+    85%{ opacity: 1; }
+    100%{ 
+        transform: rotate(-180deg); 
+        opacity: 0; 
+        left: -90vw; 
+        top: -37vh; 
+        visibility: hidden;
+    }
+}

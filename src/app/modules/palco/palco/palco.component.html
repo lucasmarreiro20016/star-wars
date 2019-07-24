@@ -1,0 +1,57 @@
+<div class="container">
+  <ng-template [ngIf]="this.getMax()">
+    <app-stars></app-stars>
+    <app-spaceship></app-spaceship>
+
+    <img src="../../../../assets/logo.svg" width="200px">
+    <div class="box">
+
+      <ng-template [ngIf]="!this.isCarregando">
+        <p class="title">{{this.respostMessage}}</p>
+        <p class="content">Population: {{this.planet.population === 'unknown' ? '-' : this.planet.population}}</p>
+        <p class="content">Climate: {{this.planet.climate  === 'unknown' ? '-' : this.planet.climate}}</p>
+        <p class="content">Terrain: {{this.planet.terrain  === 'unknown' ? '-' : this.planet.terrain}}</p>
+        <p class="films">Featured in {{this.films.length}} Films</p>
+        <ng-template [ngIf]="this.films.length > 0">
+          <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-primary mb-4 btn-sm" data-toggle="modal" data-target="#showFilms">
+              Show Films
+            </button> 
+          </div>         
+        </ng-template>
+        <button class="btn-star" (click)="onChangeRespost()">{{this.buttonMessage}}</button>
+      </ng-template>
+
+      <ng-template [ngIf]="this.isCarregando">
+        <!--#region BB8  -->
+        <div class="d-flex justify-content-center align-items-end mt-5 mb-5">
+          <div class="lds-dual-ring"></div>
+        </div>
+        <!--#endregion -->
+      </ng-template>
+
+    </div>
+  </ng-template>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="showFilms" tabindex="-1" role="dialog" aria-labelledby="showFilms" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="showFilms">Films</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngFor="let item of this.films">
+          -> {{item.title}}
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
