@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
 
-Use npm install to install project dependencies.
+Use `npm install` to install project dependencies.
 
 ## Development server
 
